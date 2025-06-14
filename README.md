@@ -30,8 +30,8 @@ src/
 1. **Clone the repo**
 
    ```bash
-   git clone https://github.com/yourusername/qatalyst.git
-   cd qatalyst
+   git clone https://github.com/ZakisCodes/Qatalyst.git
+   cd Qatalyst
    ```
 
 2. **Install dependencies**
