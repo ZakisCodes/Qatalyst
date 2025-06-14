@@ -1,6 +1,10 @@
 # Qatalyst: Quantum Algorithm API Hub 🚀
 
-Welcome to **Qatalyst**! This project bundles a suite of cool quantum computing algorithms into easy-to-use FastAPI endpoints. Whether you’re a quantum-curious beginner or a seasoned pro, my goal is to help you explore and understand these algorithms—and see how they can solve real problems.
+Welcome to **Qatalyst**! 
+If you're curious about quantum computing but not sure where to start, you're in the right place.
+Qatalyst is my little playground where I'm learning by building, bringing together some of the most interesting quantum algorithms and making them available as simple FastAPI endpoints.
+The idea is to help people (like you and me) explore how these algorithms work, what they can do, and how they might actually solve problems beyond just theory.
+Whether you're just dipping your toes into the quantum world or already neck-deep in qubits, I hope this project helps you learn something new and maybe even inspires you to build your own thing.
 
 ## ✨ Why Qatalyst?
 
@@ -12,17 +16,31 @@ Welcome to **Qatalyst**! This project bundles a suite of cool quantum computing 
 
 * **FastAPI**: Lightning-fast Python web framework for building APIs.
 * **Qiskit**: IBM’s open-source SDK for working with quantum circuits and simulators.
-* **Future Frontend (TBD)**: HTML, CSS, JavaScript—coming soon if you’d like a more interactive UI!
+* **Future Frontend **: HTML, CSS, JavaScript—coming soon if you’d like a more interactive UI!
 
 ## 📦 Project Structure
-
 ```
-src/
-├── qatalyst/            # Main FastAPI application
-│   ├── api/             # Route definitions
-│   ├── quantum/         # Algorithm modules (Grover, QPE, etc.)
-│   └── main.py          # FastAPI entry point
-└── tests/               # Automated tests (WIP)
+qatalyst/
+├── src/
+│   └── quantum_algorithms/
+│       ├── __init__.py
+│       ├── main.py                    # FastAPI app entry
+│       ├── routers/
+│       │   ├── __init__.py
+│       │   └── qiskit_routers.py      # Endpoint routes
+│       ├── grovers.py                 # Quantum algorithm modules
+│       ├── deutsh_jozsa.py
+│       ├── qaoa.py
+│       └── utils/                     # utility functions
+│           └── circuit_builder.py
+├── tests/
+│   ├── grovers_test.ipynb            # Jupyter-based demo/test notebooks
+│   └── qaoa_test.ipynb
+├── requirements.txt                  # Project dependencies
+├── README.md                         # Project description
+├── .env                              # For secrets/config
+├── .gitignore
+└── LICENSE                           # MIT license
 ```
 
 ## 🚀 Getting Started
@@ -43,7 +61,7 @@ src/
 3. **Run the server**
 
    ```bash
-   uvicorn src.qatalyst.main:app --reload
+   fastapi dev src
    ```
 
 4. **Explore the endpoints**
